@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--DIO notícias-->
+        <!--DIO Notícias-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NewsListViewController" customModule="dioNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,14 +31,31 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q3H-ng-QyQ" secondAttribute="bottom" id="uFF-qK-0Fz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="DIO notícias" id="SQ9-Kr-bFv"/>
+                    <navigationItem key="navigationItem" title="DIO Notícias" id="SQ9-Kr-bFv"/>
                     <connections>
                         <outlet property="newsListTableView" destination="Q3H-ng-QyQ" id="FG1-HI-aBa"/>
+                        <segue destination="Cap-Ye-pI7" kind="show" identifier="ShowNewsViewController" id="dXs-Ha-u3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="167" y="21"/>
+        </scene>
+        <!--Titulo-->
+        <scene sceneID="lGa-QX-hGL">
+            <objects>
+                <viewController id="Cap-Ye-pI7" customClass="NewsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKI-vs-axR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FUu-K3-oRD"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Titulo" largeTitleDisplayMode="never" id="WYS-XO-6U4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lde-yD-U8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994" y="21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MrF-GD-aF6">
@@ -65,6 +82,7 @@
             <point key="canvasLocation" x="-680" y="21"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
