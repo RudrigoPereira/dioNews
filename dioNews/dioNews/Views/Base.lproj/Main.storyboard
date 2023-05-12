@@ -44,14 +44,39 @@
         <!--Titulo-->
         <scene sceneID="lGa-QX-hGL">
             <objects>
-                <viewController id="Cap-Ye-pI7" customClass="NewsViewController" sceneMemberID="viewController">
+                <viewController id="Cap-Ye-pI7" customClass="NewsViewController" customModule="dioNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CKI-vs-axR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rq-w8-edU">
+                                <rect key="frame" x="0.0" y="94" width="375" height="684"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="twV-uT-f0O">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.14901960780000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FUu-K3-oRD"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9rq-w8-edU" firstAttribute="top" secondItem="FUu-K3-oRD" secondAttribute="top" id="0zX-U9-INo"/>
+                            <constraint firstItem="twV-uT-f0O" firstAttribute="centerY" secondItem="CKI-vs-axR" secondAttribute="centerY" id="D2C-ck-Eak"/>
+                            <constraint firstItem="FUu-K3-oRD" firstAttribute="bottom" secondItem="9rq-w8-edU" secondAttribute="bottom" id="NFY-4V-chb"/>
+                            <constraint firstItem="twV-uT-f0O" firstAttribute="centerX" secondItem="CKI-vs-axR" secondAttribute="centerX" id="Nzk-fx-usY"/>
+                            <constraint firstItem="9rq-w8-edU" firstAttribute="leading" secondItem="FUu-K3-oRD" secondAttribute="leading" id="kn1-AZ-YYL"/>
+                            <constraint firstItem="FUu-K3-oRD" firstAttribute="trailing" secondItem="9rq-w8-edU" secondAttribute="trailing" id="xZ7-Ga-eTQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Titulo" largeTitleDisplayMode="never" id="WYS-XO-6U4"/>
+                    <connections>
+                        <outlet property="newsWebView" destination="9rq-w8-edU" id="DSi-5e-ThZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lde-yD-U8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
