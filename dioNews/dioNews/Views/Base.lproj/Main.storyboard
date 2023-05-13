@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q3H-ng-QyQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q3H-ng-QyQ">
                                 <rect key="frame" x="0.0" y="146" width="375" height="632"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -57,30 +57,44 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="twV-uT-f0O">
-                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
-                                <color key="color" red="0.14901960780000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6f-v4-Y3P">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="twV-uT-f0O">
+                                        <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                        <color key="color" red="0.14901960780000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30101407284768211" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="twV-uT-f0O" firstAttribute="centerX" secondItem="M6f-v4-Y3P" secondAttribute="centerX" id="CnG-vg-TlS"/>
+                                    <constraint firstItem="twV-uT-f0O" firstAttribute="centerY" secondItem="M6f-v4-Y3P" secondAttribute="centerY" id="kvp-aA-NBW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FUu-K3-oRD"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9rq-w8-edU" firstAttribute="top" secondItem="FUu-K3-oRD" secondAttribute="top" id="0zX-U9-INo"/>
-                            <constraint firstItem="twV-uT-f0O" firstAttribute="centerY" secondItem="CKI-vs-axR" secondAttribute="centerY" id="D2C-ck-Eak"/>
+                            <constraint firstItem="M6f-v4-Y3P" firstAttribute="centerX" secondItem="CKI-vs-axR" secondAttribute="centerX" id="4w1-oF-ffS"/>
+                            <constraint firstItem="M6f-v4-Y3P" firstAttribute="width" secondItem="CKI-vs-axR" secondAttribute="width" id="949-eW-UyJ"/>
+                            <constraint firstItem="M6f-v4-Y3P" firstAttribute="height" secondItem="CKI-vs-axR" secondAttribute="height" id="KUr-hV-RLp"/>
                             <constraint firstItem="FUu-K3-oRD" firstAttribute="bottom" secondItem="9rq-w8-edU" secondAttribute="bottom" id="NFY-4V-chb"/>
-                            <constraint firstItem="twV-uT-f0O" firstAttribute="centerX" secondItem="CKI-vs-axR" secondAttribute="centerX" id="Nzk-fx-usY"/>
+                            <constraint firstItem="M6f-v4-Y3P" firstAttribute="centerY" secondItem="CKI-vs-axR" secondAttribute="centerY" id="aA3-Kn-LiY"/>
                             <constraint firstItem="9rq-w8-edU" firstAttribute="leading" secondItem="FUu-K3-oRD" secondAttribute="leading" id="kn1-AZ-YYL"/>
                             <constraint firstItem="FUu-K3-oRD" firstAttribute="trailing" secondItem="9rq-w8-edU" secondAttribute="trailing" id="xZ7-Ga-eTQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Titulo" largeTitleDisplayMode="never" id="WYS-XO-6U4"/>
                     <connections>
+                        <outlet property="loadingActivityIndicator" destination="twV-uT-f0O" id="dG6-6F-Rhz"/>
+                        <outlet property="loadingView" destination="M6f-v4-Y3P" id="Dl3-z7-zSv"/>
                         <outlet property="newsWebView" destination="9rq-w8-edU" id="DSi-5e-ThZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lde-yD-U8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="21"/>
+            <point key="canvasLocation" x="992.79999999999995" y="20.689655172413794"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MrF-GD-aF6">
